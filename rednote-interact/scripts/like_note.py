@@ -8,7 +8,10 @@ def like_note(note_url: str) -> str:
     """
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=False)
-        context = browser.new_context(storage_state="rednote_cookies.json")
+        try: 
+            context = browser.new_context(storage_state="rednote_cookies.json")
+        except FileNotFoundError:
+            return "❌ 未找到 cookies 文件，请先登录小红书并保存 cookies"
         page = context.new_page()
         page.goto(note_url)
         print("🌐 导航到小红书笔记页面...")
