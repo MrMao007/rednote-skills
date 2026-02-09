@@ -1,2 +1,4 @@
 # rednote-skills
-📕 skills that help you connect to rednote (xiaohongshu)
+📕 Combined skill that helps you connect to rednote (xiaohongshu)
+
+This unified skill combines both searching and interaction capabilities for the Xiaohongshu platform, offering a comprehensive tool for engaging with content.

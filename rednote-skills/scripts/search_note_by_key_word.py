@@ -21,7 +21,6 @@ def search(key_word: str, top_n: int) -> list[str]:
         if(login_button.is_visible()):
             return ["❌ 未登录小红书，请先登录"]
         
-        herfs = []
         prefix = 'https://www.xiaohongshu.com'
         links = page.query_selector_all('a.cover.mask.ld')
         # 获取所有 href 属性
@@ -33,9 +32,6 @@ def search(key_word: str, top_n: int) -> list[str]:
                 hrefs.append(href)
             if len(hrefs) >= top_n:
                 break
-        markdown_content = []
-        for href in hrefs:
-            hrefs.append
 
 
         context.close()
