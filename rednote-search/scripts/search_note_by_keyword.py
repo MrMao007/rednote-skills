@@ -1,4 +1,6 @@
+from html import parser
 from playwright.sync_api import sync_playwright
+import argparse
 
 
 def search(key_word: str, top_n: int) -> list[str]:
@@ -7,7 +9,7 @@ def search(key_word: str, top_n: int) -> list[str]:
     """
     with sync_playwright() as playwright:
         browser =playwright.chromium.launch(headless=True)
-        context = browser.new_context(storage_state="src/rednote_mcp_plus/cookie/rednote_cookies.json")
+        context = browser.new_context(storage_state="rednote_cookies.json")
         page = context.new_page()
         page.goto("https://www.xiaohongshu.com/search_result?keyword=" + key_word)
         print("🌐 导航到小红书主页...")
@@ -41,5 +43,13 @@ def search(key_word: str, top_n: int) -> list[str]:
         
 
 if __name__ == "__main__":
-    result = search("测试", 5)
+    
+    parser = argparse.ArgumentParser(description="搜索小红书笔记")
+    parser.add_argument("keyword", type=str, help="搜索关键词")
+    parser.add_argument("--top_n", type=int, default=5, help="返回的笔记数量")
+    args = parser.parse_args()
+    key_word = args.keyword
+    top_n = args.top_n
+    
+    result = search(key_word, top_n)
     print(result)

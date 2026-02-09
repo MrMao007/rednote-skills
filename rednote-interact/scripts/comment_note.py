@@ -1,3 +1,4 @@
+import argparse
 from playwright.sync_api import sync_playwright
 
 def comment_note(note_url: str, comment_text: str) -> str:
@@ -8,7 +9,7 @@ def comment_note(note_url: str, comment_text: str) -> str:
     """
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=True)
-        context = browser.new_context(storage_state="src/rednote_mcp_plus/cookie/rednote_cookies.json")
+        context = browser.new_context(storage_state="rednote_cookies.json")
         page = context.new_page()
         page.goto(note_url)
         print("🌐 导航到小红书笔记页面...")
@@ -27,6 +28,13 @@ def comment_note(note_url: str, comment_text: str) -> str:
         return "💬 评论已发布"
 
 if __name__ == "__main__":
-    note_url = "https://www.xiaohongshu.com/explore/69650e49000000000b01327c?xsec_token=ABv2EGvoPK_6ildvjUhwB5MIhms8PhQyc0IBd4jaXbb1g=&xsec_source=pc_user"
-    result = comment_note(note_url, "赞！")
+    
+    parser = argparse.ArgumentParser(description="评论小红书笔记")
+    parser.add_argument("note_url", type=str, help="小红书笔记URL")
+    parser.add_argument("comment_text", type=str, help="评论内容")
+    args = parser.parse_args()
+    note_url = args.note_url
+    comment_text = args.comment_text
+    
+    result = comment_note(note_url, comment_text)
     print(result)

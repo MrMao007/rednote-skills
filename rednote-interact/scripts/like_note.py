@@ -1,3 +1,4 @@
+import argparse
 from playwright.sync_api import sync_playwright
 
 def like_note(note_url: str) -> str:
@@ -24,6 +25,11 @@ def like_note(note_url: str) -> str:
         return "❤️ 笔记已点赞"
 
 if __name__ == "__main__":
-    note_url = "https://www.xiaohongshu.com/explore/69650e49000000000b01327c?xsec_token=ABv2EGvoPK_6ildvjUhwB5MIhms8PhQyc0IBd4jaXbb1g=&xsec_source=pc_user"
+    
+    parser = argparse.ArgumentParser(description="点赞小红书笔记")
+    parser.add_argument("note_url", type=str, help="小红书笔记URL")
+    args = parser.parse_args()
+    note_url = args.note_url
+    
     result = like_note(note_url)
     print(result)

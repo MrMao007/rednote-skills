@@ -1,3 +1,4 @@
+import argparse
 import json
 import re
 from playwright.sync_api import sync_playwright
@@ -10,7 +11,7 @@ def dump_note(note_url: str) -> str:
     """
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=True)
-        context = browser.new_context(storage_state="src/rednote_mcp_plus/cookie/rednote_cookies.json")
+        context = browser.new_context(storage_state="rednote_cookies.json")
         page = context.new_page()
         page.goto(note_url)
         print("🌐 导航到小红书笔记页面...")
@@ -119,8 +120,10 @@ def generate_rednote_markdown(json_data):
 
 if __name__ == "__main__":
     
-    image_url = "https://www.xiaohongshu.com/explore/692b1df8000000001e002d77?xsec_token=ABLv-A2m6YPLo6OkRiurC3TE4lB0ymF4Rr-rJwB0fQPzM=&xsec_source=pc_user"
-    video_url = "https://www.xiaohongshu.com/explore/69650e49000000000b01327c?xsec_token=ABv2EGvoPK_6ildvjUhwB5MIhms8PhQyc0IBd4jaXbb1g=&xsec_source=pc_user"
+    parser = argparse.ArgumentParser(description="导出小红书笔记内容")
+    parser.add_argument("note_url", type=str, help="小红书笔记URL")
+    args = parser.parse_args()
+    note_url = args.note_url
     
-    result = dump_note(video_url)
+    result = dump_note(note_url)
     print(result)

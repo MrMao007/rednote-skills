@@ -1,3 +1,4 @@
+import argparse
 from playwright.sync_api import sync_playwright
 
 def follow_user(note_url: str) -> str:
@@ -7,7 +8,7 @@ def follow_user(note_url: str) -> str:
     """
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=True)
-        context = browser.new_context(storage_state="src/rednote_mcp_plus/cookie/rednote_cookies.json")
+        context = browser.new_context(storage_state="rednote_cookies.json")
         page = context.new_page()
         page.goto(note_url)
         print("🌐 导航到小红书笔记页面...")
@@ -28,6 +29,11 @@ def follow_user(note_url: str) -> str:
         return result
 
 if __name__ == "__main__":
-    note_url = "https://www.xiaohongshu.com/explore/69650e49000000000b01327c?xsec_token=ABv2EGvoPK_6ildvjUhwB5MIhms8PhQyc0IBd4jaXbb1g=&xsec_source=pc_user"
+    
+    parser = argparse.ArgumentParser(description="关注小红书用户")
+    parser.add_argument("note_url", type=str, help="小红书笔记URL")
+    args = parser.parse_args()
+    note_url = args.note_url
+    
     result = follow_user(note_url)
     print(result)
