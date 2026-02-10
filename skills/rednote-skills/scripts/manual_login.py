@@ -1,11 +1,10 @@
-import os
+
 from playwright.sync_api import sync_playwright
 
 def save_cookies(context):
     """异步保存cookies到文件"""
     try:
         print("🍪 获取cookies...")
-        os.makedirs("src/rednote_mcp_plus/cookie", exist_ok=True)  # 确保目录存在
         cookies_file = "rednote_cookies.json"
         storage_state = context.storage_state(path=cookies_file)
         

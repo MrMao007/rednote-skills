@@ -1,0 +1,22 @@
+{
+  "name": "rednote-skills",
+  "owner": {
+    "name": "Mao Tianyang",
+    "email": "mty1209@gmail.com"
+  },
+  "metadata": {
+    "description": "Rednote skills",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "rednote-skills",
+      "description": "skills that help you connect to rednote (xiaohongshu)",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/rednote-skills"
+      ]
+    }
+  ]
+}
