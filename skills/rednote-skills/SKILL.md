@@ -15,7 +15,7 @@ This skill allows you to fully interact with the Xiaohongshu (Little Red Book) p
 - Playwright drivers (install with `playwright install`)
 - Configured browser environment
 
-### Validate Xiaohongshu Login Status
+### Always DO FIRST
 Before using this skill, the system will verify your login status:
 ```
 python scripts/validate_cookies.py
