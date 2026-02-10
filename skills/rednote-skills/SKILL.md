@@ -54,7 +54,7 @@ The skill provides several interaction functions:
 - **Collect Note**: `python scripts/collect_note.py <NOTE_URL>`
 - **Comment on Note**: `python scripts/comment_note.py <NOTE_URL> <COMMENT_TEXT>`
 - **Follow User**: `python scripts/follow_user.py <NOTE_URL>`
-- **Publish Note**: `python scripts/publish_note.py [--title TITLE] [--content CONTENT] [--image_path IMAGE_PATH]`
+- **Publish Note**: `python scripts/publish_note.py --image-urls <IMG1 [IMG2 ...]> --title <TITLE> --content <CONTENT> --tags <TAG1 [TAG2 ...]>`
 - **Validate Login**: `python scripts/validate_cookies.py`
 - **Manual Login**: `python scripts/manual_login.py`
 
@@ -150,16 +150,17 @@ This skill provides the following functions for searching content on and interac
 **Behavior**: Launches browser, navigates to Xiaohongshu, allows user to log in manually, then saves cookies to storage file.
 
 ### Publish Note (`publish_note.py`)
-**Purpose**: Publishes a new note to the user's Xiaohongshu account with provided content and options for image upload.
+**Purpose**: Publishes a new image-text note to the user's Xiaohongshu account with provided content, images, and tags.
 
 **Parameters**:
-- `[--title TITLE]`: The title for the new note (optional, can also be entered during publishing)
-- `[--content CONTENT]`: The main content text for the new note (optional, can also be entered during publishing)
-- `[--image_path IMAGE_PATH]`: Path to image file(s) to upload with the note (optional, can add images interactively)
+- `--image-urls IMG1 [IMG2 ...]`: Paths to one or more image files to upload with the note (required)
+- `--title TITLE`: The title for the new note (required)
+- `--content CONTENT`: The main content text for the new note (required)
+- `--tags TAG1 [TAG2 ...]`: One or more tags to attach to the note (required)
 
 **Returns**: Success or error message indicating if the note was published successfully
 
-**Behavior**: Launches browser, navigates to the Xiaohongshu publish page, fills in the note title, content, and uploads provided images, then clicks the publish button.
+**Behavior**: Launches browser, navigates to the Xiaohongshu publish page, fills in the note title, content, tags and uploads provided images, then clicks the publish button.
 
 ## Examples
 
@@ -198,11 +199,12 @@ python scripts/follow_user.py "https://www.xiaohongshu.com/explore/some-note-by-
 
 ### Publishing a Note
 ```
-# Publish a new note with title, content, and image
-python scripts/publish_note.py --title "My New Post" --content "Check out this amazing discovery!" --image_path "/path/to/image.jpg"
-
-# Publish a new note with interactive entry (without specifying parameters)
-python scripts/publish_note.py
+# Publish a new note with images, title, content, and tags
+python scripts/publish_note.py \
+  --image-urls "/path/to/img1.jpg" "/path/to/img2.jpg" \
+  --title "My New Post" \
+  --content "Check out this amazing discovery!" \
+  --tags "travel" "food" "lifestyle"
 ```
 
 ### Complete User Session

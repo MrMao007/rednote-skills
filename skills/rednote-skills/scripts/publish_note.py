@@ -29,7 +29,7 @@ def publish_text(image_urls: List[str], title: str, content: str, tags: List[str
     
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=False)
-        context = browser.new_context(storage_state="src/rednote_mcp_plus/cookie/rednote_cookies.json")
+        context = browser.new_context(storage_state="rednote_cookies.json")
         page = context.new_page()
         page.goto("https://www.xiaohongshu.com/explore")
         print("🌐 导航到小红书主页...")
@@ -69,15 +69,11 @@ def publish_text(image_urls: List[str], title: str, content: str, tags: List[str
 if __name__ == "__main__":
     
     parser = argparse.ArgumentParser(description="发布小红书图文笔记")
-    parser.add_argument("image_urls", nargs="+", type=str, help="图片URL列表")
-    parser.add_argument("title", type=str, help="笔记标题")
-    parser.add_argument("content", type=str, help="笔记内容")
-    parser.add_argument("tags", nargs="+", type=str, help="标签列表")
+    parser.add_argument("--image-urls", nargs="+", type=str, required=True, help="图片URL列表")
+    parser.add_argument("--title", type=str, required=True, help="笔记标题")
+    parser.add_argument("--content", type=str, required=True, help="笔记内容")
+    parser.add_argument("--tags", nargs="+", type=str, required=True, help="标签列表")
     args = parser.parse_args()
-    image_urls = args.image_urls
-    title = args.title
-    content = args.content
-    tags = args.tags
     
-    result = publish_text(image_urls, title, content, tags)
+    result = publish_text(args.image_urls, args.title, args.content, args.tags)
     print(result)
