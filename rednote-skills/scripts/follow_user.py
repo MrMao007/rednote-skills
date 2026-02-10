@@ -7,7 +7,7 @@ def follow_user(note_url: str) -> str:
     :param note_url: 笔记URL
     """
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch(headless=True)
+        browser = playwright.chromium.launch(headless=False)
         try: 
             context = browser.new_context(storage_state="rednote_cookies.json")
         except FileNotFoundError:

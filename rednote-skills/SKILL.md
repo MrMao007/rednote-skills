@@ -244,12 +244,6 @@ python scripts/follow_user.py "https://www.xiaohongshu.com/explore/note-by-creat
 - No specific environment variables are required
 - The skill uses the default configuration files in the scripts directory
 
-#### Headless Operation
-- For `follow_user.py`, `comment_note.py`, and `search_note_by_key_word.py` use headless mode to optimize performance
-- `like_note.py` uses non-headless mode by default to provide visual feedback
-- Other search/extraction functions may enable headless based on requirements
-- To modify headless setting, the browser launch parameters can be changed in the Python files
-
 ### Prerequisites Verification
 
 Before using the rednote skill, verify:

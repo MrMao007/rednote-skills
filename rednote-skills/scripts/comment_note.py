@@ -8,7 +8,7 @@ def comment_note(note_url: str, comment_text: str) -> str:
     :param comment_text: 评论内容
     """
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch(headless=True)
+        browser = playwright.chromium.launch(headless=False)
         try: 
             context = browser.new_context(storage_state="rednote_cookies.json")
         except FileNotFoundError:
@@ -24,9 +24,10 @@ def comment_note(note_url: str, comment_text: str) -> str:
         page.locator(".chat-wrapper > .reds-icon").click()
         page.locator("#content-textarea").fill(comment_text)
         page.get_by_role("button", name="发送").click()
-
+        
         context.close()
         browser.close()
+        
             
         return "💬 评论已发布"
 
