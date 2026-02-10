@@ -16,19 +16,19 @@ This skill allows you to fully interact with the Xiaohongshu (Little Red Book) p
 - Configured browser environment
 
 ### Validate Xiaohongshu Login Status
-Before using this skill, please verify your login status:
+Before using this skill, the system will verify your login status:
 ```
 python scripts/validate_cookies.py
 ```
 
 If the output is `True`, you have normal access and can proceed with search operations.
 
-If the output is `False` or the login button is visible, please execute the manual login procedure:
+If the output is `False` or the login button is visible, the system will automatically execute the manual login procedure:
 
 ```
 python scripts/manual_login.py
 ```
-Follow the instructions in the opened browser to complete the login, then close the browser after completion.
+The system will launch the login interface in a browser window. You'll need to follow the instructions in the opened browser to complete the login process manually, then close the browser after completion.
 
 ## Usage Steps
 
@@ -36,8 +36,8 @@ Follow the instructions in the opened browser to complete the login, then close 
 
 Before using this skill, ensure that:
 1. The required dependencies are installed (Python 3.7+, Playwright)
-2. Valid cookies are saved via the manual login process
-3. Login status is validated using the validation utility
+2. The system will automatically handle the cookie saving via the manual login process when needed
+3. Login status will be validated automatically using the validation utility
 
 ### 2. Using Search Functions
 
@@ -233,7 +233,7 @@ python scripts/follow_user.py "https://www.xiaohongshu.com/explore/note-by-creat
 
 ### Best Practices
 
-1. **Validate Login First**: Always check login status using `validate_cookies.py` before performing any interactions to ensure smooth operations.
+1. **Validate Login First**: Login status will be automatically checked using `validate_cookies.py` before performing any interactions to ensure smooth operations.
 
 2. **Rate Limiting**: To avoid account restrictions, implement appropriate delays between consecutive interactions. Avoid excessive rapid interactions.
 
@@ -282,8 +282,8 @@ Before using the rednote skill, verify:
    - Valid Xiaohongshu account credentials
 
 3. **Security Setup**:
-   - Completed manual login and cookies saved
-   - Confirmed login status via validation script
+   - The system will handle automatic login when needed
+   - Login status will be confirmed via validation script
    - Secured storage for authentication tokens
 
 ## Troubleshooting
@@ -292,11 +292,11 @@ Before using the rednote skill, verify:
 
 #### Login Error (`❌ 未找到 cookies 文件，请先登录小红书并保存 cookies`)
 **Cause**: The `rednote_cookies.json` file doesn't exist or is not in the correct location.
-**Solution**: Run `python scripts/manual_login.py` to perform manual login and save cookies.
+**Solution**: The system will automatically execute `python scripts/manual_login.py` to perform manual login and save cookies. The user just needs to complete the login process in the opened browser window.
 
 #### Login Session Expired (`❌ 未登录小红书，请先登录`)
 **Cause**: Authentication tokens have expired or are invalid.
-**Solution**: Re-verify login status; if necessary, run `python scripts/manual_login.py` again to refresh tokens.
+**Solution**: The system will re-verify login status and may execute `python scripts/manual_login.py` again to refresh tokens. The user just needs to complete the login process in the opened browser window if prompted.
 
 #### Page Navigation Issues
 **Cause**: Network connectivity issues or URL format errors.
