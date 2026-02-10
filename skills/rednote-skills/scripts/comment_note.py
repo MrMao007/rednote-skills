@@ -27,7 +27,6 @@ def comment_note(note_url: str, comment_text: str) -> str:
         
         context.close()
         browser.close()
-        
             
         return "💬 评论已发布"
 
