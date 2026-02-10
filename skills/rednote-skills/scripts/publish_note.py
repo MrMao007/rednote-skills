@@ -1,4 +1,5 @@
 import argparse
+import re
 from typing import List
 from playwright.sync_api import sync_playwright
 
