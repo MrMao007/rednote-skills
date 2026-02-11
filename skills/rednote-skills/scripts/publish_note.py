@@ -51,7 +51,7 @@ def publish_text(image_urls: List[str], title: str, content: str, tags: List[str
         print("🖼️ 上传图片...")
         page1.on("filechooser", lambda file_chooser: file_chooser.set_files(rednoteArticle.image_urls)) # 替换为你的文件路径
         
-        page1.get_by_role("textbox", name="填写标题会有更多赞哦～").fill(rednoteArticle.title)
+        page1.get_by_role("textbox", name="填写标题会有更多赞哦").fill(rednoteArticle.title)
         final_content = rednoteArticle.content + "\n\n" + "\n".join([f"#{tag}" for tag in rednoteArticle.tags])
         page1.get_by_role("paragraph").filter(has_text=re.compile(r"^$")).fill(final_content)
         page1.wait_for_timeout(10000) # 等待发布内容加载完成
