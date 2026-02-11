@@ -7,14 +7,15 @@
 📕 skills that help you connect to rednote (xiaohongshu)
 
 
-### What can rednote-skills Do
+## What can rednote-skills Do
 
-#### 🔍Search Notes
+- 🔍Note Search 
 
-https://file.icve.com.cn/file_doc/qdqqd/2811770796094763.mov
+- ❤️Note Interaction
 
+- 📕Note Publish
 
-### Try in Claude Code
+## Try in Claude Code
 
 You can register this repository as a Claude Code Plugin marketplace by running the following command in Claude Code:
 ```
@@ -25,3 +26,5 @@ Then install rednote-skills via:
 ```
 /plugin install rednote-skills@rednote-skills 
 ```
+
+Now you're all set! Start exploring the skills. 🎉
