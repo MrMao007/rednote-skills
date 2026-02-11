@@ -4,6 +4,8 @@
 [![简体中文](https://img.shields.io/badge/简体中文-点击查看-orange)](README.cn.md)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue)](../LICENSE)
 
+<img width="1566" height="451" alt="1770819417" src="https://github.com/user-attachments/assets/649ee2ff-fafb-4994-bceb-1af21a6e1db9" />
+
 📕 帮助你连接小红书的技能插件
 
 
