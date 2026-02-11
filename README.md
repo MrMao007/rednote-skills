@@ -45,6 +45,9 @@ The rednote-skills enables you to automatically publish your own posts.
 
 https://github.com/user-attachments/assets/5b70cedf-b627-4039-9688-abde2ceb4e16
 
+The task has been successfully completed. The resulting post appears as follows:
+
+<img width="295" height="639" src="https://github.com/user-attachments/assets/478248c6-5361-4fd7-b0c9-e8fe1995c207" />
 
 ## Try in Claude Code
 
