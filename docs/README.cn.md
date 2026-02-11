@@ -45,6 +45,10 @@ rednote-skills 支持你自动发布自己的笔记内容。
 
 https://github.com/user-attachments/assets/5b70cedf-b627-4039-9688-abde2ceb4e16
 
+任务已成功完成。生成的笔记如下所示：
+
+<img width="295" height="639" src="https://github.com/user-attachments/assets/478248c6-5361-4fd7-b0c9-e8fe1995c207" />
+
 ## 在 Claude Code 中使用
 
 你可以在 Claude Code 中运行以下命令，将本仓库注册为插件市场：
