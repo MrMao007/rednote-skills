@@ -4,20 +4,47 @@
 [![简体中文](https://img.shields.io/badge/简体中文-点击查看-orange)](docs/README.cn.md)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue)](LICENSE)
 
-📕 skills that help you connect to rednote (xiaohongshu)
+📕 skills that help you connect to RedNote (xiaohongshu)
 
 
-## What can rednote-skills Do
+## What Can rednote-skills Do
 
-- ❤️Note Interaction
+### 🤝 Note Interaction
+
+Supported RedNote post interactions include:
+1. ❤️ liking
+2. ⭐ collecting
+3. 💬 commenting
+4. 👤 following authors
+
+**Example prompt:**
+
+> Search for the first RedNote post related to "skills", like it, collect it, follow the author, and comment "Learned something new!"
+
+https://github.com/user-attachments/assets/6269fe02-7514-4aad-98e5-da6c43809adf
 
 
+### 🔍 Note Searching
 
-- 🔍Note Search
+With rednote-skills, you can search and extract content from RedNote posts.
+
+**Example prompt:**
+
+> What are the currently trending travel destinations on RedNote?
+
+https://github.com/user-attachments/assets/6699c061-1180-4b48-b6f9-8a9ccfad437f
 
 
+### 📕 Note Publishing
 
-- 📕Note Publish
+The rednote-skills enables you to automatically publish your own posts.
+
+**Example prompt:**
+
+> Publish a Paris travel guide note on RedNote, including a detailed day-by-day itinerary, with cover.png used as the featured image.
+
+https://github.com/user-attachments/assets/5b70cedf-b627-4039-9688-abde2ceb4e16
+
 
 ## Try in Claude Code
 
