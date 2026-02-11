@@ -1,7 +1,7 @@
 # rednote-skills
 
-[![English](https://img.shields.io/badge/English-Click-yellow)](docs/README.en.md)
-[![简体中文](https://img.shields.io/badge/简体中文-点击查看-orange)](README.md)
+[![English](https://img.shields.io/badge/English-Click-yellow)](README.md)
+[![简体中文](https://img.shields.io/badge/简体中文-点击查看-orange)](docs/README.cn.md)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue)](LICENSE)
 
 📕 skills that help you connect to rednote (xiaohongshu)
