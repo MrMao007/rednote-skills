@@ -9,7 +9,9 @@
 
 ### What can rednote-skills Do
 
-#### 🔍
+#### 🔍Search Notes
+
+
 
 
 ### Try in Claude Code
