@@ -8,6 +8,9 @@
 
 📕 skills that help you connect to RedNote (xiaohongshu)
 
+## Changelog
+
+- Available in [ClawHub](https://clawhub.ai/MrMao007/rednote-skills) now !
 
 ## What Can rednote-skills Do
 
